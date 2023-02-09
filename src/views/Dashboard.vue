@@ -14,12 +14,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="pacient of listPacient" :key="pacient.pacient">
+                <tr v-for="pacient of listPacient" :key="pacient.PacienteId">
                 <th scope="row">{{pacient.PacienteId}}</th>
                 <td>{{pacient.Nombre}}</td>
                 <td>{{pacient.DNI}}</td>
                 <td>{{pacient.Telefono}}</td>
                 <td>{{pacient.Correo}}</td>
+               <button class="btn btn-warning sm" v-on:click="editar(pacient.PacienteId)">Modificar</button> 
                 </tr>
                 
             </tbody>
@@ -45,6 +46,11 @@ export default {
     components:{
         Header,
         Footer
+    },
+    methods:{
+        editar(id){
+            this.$router.push('/editar/'+id);
+        }
     },
     mounted(){
         let api ="https://api.solodata.es/pacientes?page=" + this.pagina;

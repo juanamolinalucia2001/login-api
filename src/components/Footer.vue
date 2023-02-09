@@ -1,7 +1,7 @@
 <template>
     <div>
        <footer>
-        njdnchjbchbchbdbdb
+        MEDICAR
        </footer>
     </div>
 </template>
